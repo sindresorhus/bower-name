@@ -4,13 +4,13 @@
   "description": "Check whether a package name is available on bower",
   "license": "MIT",
   "repository": "sindresorhus/bower-name",
-  "bin": {
-    "bower-name": "cli.js"
-  },
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
+  },
+  "bin": {
+    "bower-name": "cli.js"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -33,7 +33,8 @@
     "available"
   ],
   "dependencies": {
-    "got": "^0.3.0"
+    "got": "^1.0.1",
+    "log-symbols": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "*"

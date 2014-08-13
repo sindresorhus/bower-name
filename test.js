@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var bowerName = require('./index');
+var bowerName = require('./');
 
 it('should return true when package name is available', function (cb) {
 	bowerName('asdasfgrgafadsgaf', function (err, available) {

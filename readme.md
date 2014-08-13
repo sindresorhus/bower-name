@@ -5,7 +5,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save bower-name
 ```
 
@@ -24,21 +24,17 @@ bowerName('jquery', function (err, available) {
 
 ## CLI
 
-You can also use it as a CLI app by installing it globally:
-
-```bash
+```sh
 $ npm install --global bower-name
 ```
 
-#### Usage
-
-```bash
+```
 $ bower-name --help
 
-Usage
-  $ bower-name <name>
+  Usage
+    bower-name <name>
 
-Exits with code 0 when the name is available or 2 when taken
+  Exits with code 0 when the name is available or 2 when taken
 ```
 
 
