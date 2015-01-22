@@ -3,13 +3,15 @@ var got = require('got');
 var endpoint = 'https://bower.herokuapp.com/packages/';
 
 module.exports = function (name, cb) {
-	got(endpoint + encodeURIComponent(name), {method: 'HEAD'}, function (err, data) {
-		if (err === 404) {
-			return cb(null, true);
+	got.head(endpoint + encodeURIComponent(name), function (err, data) {
+		if (err && err.code === 404) {
+			cb(null, true);
+			return;
 		}
 
 		if (err) {
-			return cb(err);
+			cb(err);
+			return;
 		}
 
 		cb(null, false);
