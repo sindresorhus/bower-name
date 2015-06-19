@@ -1,38 +1,27 @@
 #!/usr/bin/env node
 'use strict';
 var logSymbols = require('log-symbols');
-var pkg = require('./package.json');
+var meow = require('meow');
 var bowerName = require('./');
-var argv = process.argv.slice(2);
-var input = argv[0];
 
-function help() {
-	console.log([
+var cli = meow({
+	help: [
+		'Usage',
+		'  $ bower-name <name>',
 		'',
-		'  ' + pkg.description,
-		'',
-		'  Usage',
-		'    bower-name <name>',
-		'',
-		'  Exits with code 0 when the name is available or 2 when taken'
-	].join('\n'));
+		'Exits with code 0 when the name is available or 2 when taken'
+	]
+});
+
+if (cli.input.length === 0) {
+	console.error('Expected a package name');
+	process.exit(1);
 }
 
-if (!input || argv.indexOf('--help') !== -1) {
-	help();
-	return;
-}
-
-if (argv.indexOf('--version') !== -1) {
-	console.log(pkg.version);
-	return;
-}
-
-bowerName(input, function (err, available) {
+bowerName(cli.input[0], function (err, available) {
 	if (err) {
 		console.error(err);
 		process.exit(1);
-		return;
 	}
 
 	console.log(available ? logSymbols.success + ' Available' : logSymbols.error + ' Unavailable');

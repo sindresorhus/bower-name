@@ -32,7 +32,7 @@ $ npm install --global bower-name
 $ bower-name --help
 
   Usage
-    bower-name <name>
+    $ bower-name <name>
 
   Exits with code 0 when the name is available or 2 when taken
 ```
