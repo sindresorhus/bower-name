@@ -3,7 +3,11 @@ var got = require('got');
 var endpoint = 'https://bower.herokuapp.com/packages/';
 
 module.exports = function (name, cb) {
-	got.head(endpoint + encodeURIComponent(name.toLowerCase()), function (err, data) {
+	if (!(typeof name === 'string' && name.length !== 0)) {
+		throw new Error('Package name required');
+	}
+
+	got.head(endpoint + encodeURIComponent(name.toLowerCase()), function (err) {
 		if (err && err.code === 404) {
 			cb(null, true);
 			return;

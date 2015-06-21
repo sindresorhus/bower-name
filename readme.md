@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save bower-name
 ```
 
@@ -24,7 +24,7 @@ bowerName('jquery', function (err, available) {
 
 ## CLI
 
-```sh
+```
 $ npm install --global bower-name
 ```
 
@@ -33,6 +33,12 @@ $ bower-name --help
 
   Usage
     $ bower-name <name>
+
+  Examples
+    $ bower-name multiline
+    ✖ Unavailable
+    $ bower-name unicorn-cake
+    ✔ Available
 
   Exits with code 0 when the name is available or 2 when taken
 ```
