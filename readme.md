@@ -13,9 +13,9 @@ $ npm install --save bower-name
 ## Usage
 
 ```js
-var bowerName = require('bower-name');
+const bowerName = require('bower-name');
 
-bowerName('jquery', function (err, available) {
+bowerName('jquery').then(available => {
 	console.log(available);
 	//=> false
 });

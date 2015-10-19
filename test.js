@@ -1,19 +1,10 @@
-'use strict';
-var assert = require('assert');
-var bowerName = require('./');
+import test from 'ava';
+import fn from './';
 
-it('should return true when package name is available', function (cb) {
-	bowerName('asdasfgrgafadsgaf', function (err, available) {
-		assert(!err, err);
-		assert(available);
-		cb();
-	});
+test('package name is available', async t => {
+	t.true(await fn('asdasfgrgafadsgaf'));
 });
 
-it('should return false when package name is taken', function (cb) {
-	bowerName('jquery', function (err, available) {
-		assert(!err, err);
-		assert(!available);
-		cb();
-	});
+test('package name is taken', async t => {
+	t.false(await fn('jquery'));
 });
