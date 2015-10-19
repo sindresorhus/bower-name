@@ -9,7 +9,6 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "cli.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -17,23 +16,19 @@
     "test": "xo && ava"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "index.js"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
     "app",
     "bower",
     "package",
     "name",
     "check",
-    "available"
+    "available",
+    "taken"
   ],
   "dependencies": {
     "got": "^5.0.0",
-    "log-symbols": "^1.0.0",
-    "meow": "^3.3.0",
     "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {

@@ -22,26 +22,9 @@ bowerName('jquery').then(available => {
 ```
 
 
-## CLI
+## Related
 
-```
-$ npm install --global bower-name
-```
-
-```
-$ bower-name --help
-
-  Usage
-    $ bower-name <name>
-
-  Examples
-    $ bower-name multiline
-    ✖ Unavailable
-    $ bower-name unicorn-cake
-    ✔ Available
-
-  Exits with code 0 when the name is available or 2 when taken
-```
+- [bower-name-cli](https://github.com/sindresorhus/bower-name-cli) - CLI for this module
 
 
 ## License
